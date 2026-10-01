@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VisionCraft AI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="scanlines"></div>
+
+<header class="topbar">
+    <div class="logo">
+        <span class="logo-symbol">&gt;</span>
+        VISIONCRAFT
+        <span class="ai">_AI</span>
+    </div>
+    <div class="status">
+        <span class="status-dot"></span>
+        SYSTEM ONLINE
+    </div>
+</header>
+
+<main>
+    <!-- HERO -->
+    <section class="hero">
+        <div class="terminal-header">
+            <span class="terminal-dot red"></span>
+            <span class="terminal-dot yellow"></span>
+            <span class="terminal-dot green"></span>
+            <span class="terminal-title">
+                visioncraft@ai-terminal  @ShikharMishra
+            </span>
+        </div>
+
+        <div class="terminal-body">
+            <div class="terminal-line">
+                <span>root@visioncraft</span>
+                <span>:</span>
+                <span class="blue">~</span>
+                <span>$</span>
+                <span> generate --image</span>
+            </div>
+
+            <div class="welcome">
+                <div>╔══════════════════════════════════════╗</div>
+                <div>║    VISIONCRAFT IMAGE ENGINE          ║</div>
+                <div>║    TURN WORDS INTO VISUALS           ║</div>
+                <div>╚══════════════════════════════════════╝</div>
+            </div>
+
+            <label class="prompt-label" for="promptInput">
+                ENTER YOUR PROMPT
+            </label>
+
+            <div class="input-wrapper">
+                <span class="prompt-symbol">
+                    prompt &gt;
+                </span>
+                <textarea
+                    id="promptInput"
+                    placeholder="Describe the image you want to create..."
+                    maxlength="1000"></textarea>
+            </div>
+
+            <div class="controls">
+                <button id="generateBtn" type="button">
+                    <span class="button-icon">▶</span>
+                    GENERATE_IMAGE
+                </button>
+                <span class="shortcut">
+                    [ ENTER ↵ ]
+                </span>
+            </div>
+
+            <div id="terminalOutput" class="terminal-output">
+                <div>
+                    <span class="green">[SYSTEM]</span>
+                    VisionCraft AI initialized...
+                </div>
+                <div>
+                    <span class="green">[SYSTEM]</span>
+                    Waiting for prompt...
+                    <span class="cursor">█</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RESULT -->
+    <section id="resultSection" class="result-section hidden">
+        <div class="section-title">
+            <span>./generated_result</span>
+            <span class="line"></span>
+        </div>
+
+        <div class="result-container">
+            <div class="image-container">
+                <img id="generatedImage" alt="Generated image">
+            </div>
+
+            <div class="image-info">
+                <div class="info-title">
+                    IMAGE_METADATA
+                </div>
+
+                <div class="metadata">
+                    <div>
+                        <span>ID:</span>
+                        <span id="imageId">--</span>
+                    </div>
+                    <div>
+                        <span>PROMPT:</span>
+                        <span id="imagePrompt">--</span>
+                    </div>
+                    <div>
+                        <span>MODEL:</span>
+                        <span id="imageModel">--</span>
+                    </div>
+                </div>
+
+                <a id="downloadBtn" class="download-btn" download>
+                    ↓ DOWNLOAD_IMAGE
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- HISTORY -->
+    <section class="history-section">
+        <div class="section-title">
+            <span>./image_history</span>
+            <span class="line"></span>
+            <button id="refreshBtn">
+                ↻ REFRESH
+            </button>
+        </div>
+
+        <div id="gallery" class="gallery">
+            <div class="empty-state">
+                <div class="empty-icon">
+                    [ _ ]
+                </div>
+                <p>
+                    NO GENERATED IMAGES FOUND
+                </p>
+                <small>
+                    Your creations will appear here.
+                </small>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <span>VISIONCRAFT AI</span>
+    <span>SYSTEM_STATUS: <b>ONLINE</b></span>
+    <span>© 2026</span>
+</footer>
+
+<script src="app.js"></script>
+
+</body>
+</html>
