@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:8080/api/images";
+const API_URL = "https://visioncraft-f9fu.onrender.com/api/images";
 
 const promptInput = document.getElementById("promptInput");
 const generateBtn = document.getElementById("generateBtn");
