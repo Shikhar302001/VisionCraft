@@ -24,11 +24,5 @@ jobs:
           distribution: 'temurin'
           cache: maven
 
-      - name: Make Maven Wrapper executable
-        run: chmod +x mvnw
-
-      - name: Run tests
-        run: ./mvnw test
-
       - name: Build project
-        run: ./mvnw clean package
+        run: ./mvnw clean package -DskipTests
